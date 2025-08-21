@@ -8,7 +8,7 @@ import bg from './app.module.scss'
 export default function Home() {
   return (
     <ReactLenis root>
-      <div className="min-h-screen">
+      <div className="min-h-screen flex flex-col items-center justify-center">
         <header className="fixed top-0 left-0 w-full z-50 py-3 bg-transparent">
           <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-end items-center">
             <div className="flex items-center gap-3">
