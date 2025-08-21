@@ -7,7 +7,7 @@ Supports drag & drop, multiple file uploads, preview, persistent storage, and QR
 
 ## 🚀 Live Demo
 
-👉 [Try it here](https://file-uploader.vercel.app)
+👉 [Try it here](https://file-uploader-kn.vercel.app/)
 
 ---
 
