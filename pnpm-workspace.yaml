@@ -1,5 +1,0 @@
-allowBuilds:
-    '@parcel/watcher': true
-    esbuild: set this to true or false
-    sharp: set this to true or false
-    unrs-resolver: true
