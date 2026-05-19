@@ -1,6 +1,6 @@
 # File Uploader
 
-Modern file uploader built with Next.js 16, React 19, and Tailwind CSS v4.
+A modern, design-forward file uploader built with Next.js 16, React 19, and Tailwind CSS v4, featuring instant QR sharing, smooth dark/light theming, and a polished mobile-first experience.
 
 ![Home](app/image.png)
 ![Preview](app/image-1.png)
