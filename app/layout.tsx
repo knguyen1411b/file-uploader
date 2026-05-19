@@ -1,37 +1,29 @@
 import type { Metadata } from 'next'
 
-import './globals.css'
-import { ThemeProvider } from './provider'
+import { Fraunces, Manrope } from 'next/font/google'
+
 import { Toaster } from '@/components/ui/sonner'
 
-export default function RootLayout({
-  children
-}: Readonly<{
-  children: React.ReactNode
-}>) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="antialiased custom-font">
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          {children}
-          <Toaster position="top-center" />
-        </ThemeProvider>
-      </body>
-    </html>
-  )
-}
+import './globals.css'
+import { ThemeProvider } from './provider'
+
+const fraunces = Fraunces({ subsets: ['latin'], variable: '--font-heading' })
+const manrope = Manrope({ subsets: ['latin'], variable: '--font-body' })
 
 export const metadata: Metadata = {
-  title: 'File Uploader - Knguyen1411b',
-  description: 'A simple and modern file uploader built with Next.js, TailwindCSS, and ShadCN UI',
-  keywords: ['Next.js', 'File Uploader', 'ShadCN', 'TailwindCSS', 'Upload'],
-  authors: [{ name: 'Khanh Nguyen', url: 'https://knguyen1411b.vercel.app' }],
-  openGraph: {
-    title: 'File Uploader - Knguyen1411b',
-    description: 'Upload and share your files instantly.',
-    url: 'https://your-app-url.com',
-    siteName: 'File Uploader',
-    locale: 'en_US',
-    type: 'website'
-  }
+    title: 'File Uploader Workspace',
+    description: 'Modern file uploader with native API routes, QR share, and premium UI.'
+}
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+    return (
+        <html lang="en" suppressHydrationWarning>
+            <body className={`${fraunces.variable} ${manrope.variable} antialiased`}>
+                <ThemeProvider>
+                    {children}
+                    <Toaster position="top-center" />
+                </ThemeProvider>
+            </body>
+        </html>
+    )
 }

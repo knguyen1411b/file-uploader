@@ -1,55 +1,63 @@
-# 📂 File Uploader
+# File Uploader
 
-A modern file uploader built with **Next.js 14**, **TypeScript**, and **TailwindCSS**.  
-Supports drag & drop, multiple file uploads, preview, persistent storage, and QR code sharing.
+Modern file uploader built with Next.js 16, React 19, and Tailwind CSS v4.
 
----
+![Home](app/image.png)
+![Preview](app/image-1.png)
 
-## 🚀 Live Demo
+## Features
 
-👉 [Try it here](https://file-uploader-kn.vercel.app/)
+- Upload multiple files with duplicate-name filtering
+- Download, copy link, delete item, and QR share
+- Dark/light theme with responsive mobile-first UI
+- Local upload history persistence (`localStorage`)
+- Internal upload API (`/api/upload`, `/api/upload/[id]`)
 
----
+## Tech Stack
 
-## ✨ Features
+- Next.js 16 (App Router)
+- React 19
+- Tailwind CSS v4
+- TypeScript
+- Vitest
 
-- 🚀 Upload multiple files at once
-- 📥 Drag & drop support
-- 📱 Generate QR codes for quick sharing
-- 💾 Local storage persistence (keep uploaded history after reload)
-- 🎨 Clean & modern UI with TailwindCSS + shadcn/ui
-- 🔔 Toast notifications with [sonner](https://sonner.emilkowal.ski/)
-- ⚡️ Catbox API proxy for file hosting
+## Project Structure
 
----
+```txt
+app/
+  api/upload/route.ts
+  api/upload/[id]/route.ts
+  image.png
+  image-1.png
+  layout.tsx
+  page.tsx
+features/
+  uploader/
+    components/uploader-app.tsx
+    hooks/use-file-uploader.ts
+    types.ts
+lib/
+  upload-store.ts
+```
 
-## 🛠️ Tech Stack
+## Getting Started
 
-- [Next.js 14 (App Router)](https://nextjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [TailwindCSS](https://tailwindcss.com/)
-- [Shadcn/ui](https://ui.shadcn.com/)
-- [Lucide Icons](https://lucide.dev/)
-- [Sonner](https://sonner.emilkowal.ski/) for toasts
-- [Catbox](https://catbox.moe/) for file hosting
+```bash
+pnpm install
+pnpm dev
+```
 
----
+Default app URL: `http://localhost:3002`
 
-## 📸 Screenshots
+## Scripts
 
-Upload Area
-![Uploader](./app/screen.png)
+```bash
+pnpm dev
+pnpm lint
+pnpm test
+pnpm build
+pnpm start
+```
 
-Upload Files
-![Uploader](./app/screen-2.png)
-
-QR Code Share
-![Uploader](./app/screen-3.png)
-
-👉 You can even scan the QR code directly from the demo to download uploaded files.
-
----
-
-## 📜 License
-
-MIT License © 2025 - [Khanh Nguyen](https://github.com/knguyen1411b)
+> [!NOTE]
+> Current upload storage uses in-memory `Map` (`lib/upload-store.ts`). Uploaded files are cleared after server restart.
